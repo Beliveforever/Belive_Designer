@@ -1,0 +1,50 @@
+{
+  "type": "Box",
+  "width": 1000,
+  "height": 46,
+  "axis": "row",
+  "alignItems": "center",
+  "gap": 12,
+  "children": [
+    {
+      "type": "Box",
+      "axis": "column",
+      "gap": 2,
+      "grow": 1,
+      "children": [
+        {
+          "type": "Label",
+          "text": "游戏库",
+          "fontSize": 24,
+          "textColor": "@theme/color.text"
+        },
+        {
+          "type": "Label",
+          "text": "精选复古游戏 · 4 款",
+          "fontSize": 11,
+          "textColor": "@theme/color.textMuted"
+        }
+      ]
+    },
+    {
+      "type": "Label",
+      "text": "10:24",
+      "fontSize": 13,
+      "textColor": "@theme/color.text"
+    },
+    {
+      "type": "Image",
+      "src": "@res/assets/icon_wifi.svg",
+      "width": 18,
+      "height": 18,
+      "scalingType": "fill"
+    },
+    {
+      "type": "Image",
+      "src": "@res/assets/icon_battery.svg",
+      "width": 18,
+      "height": 18,
+      "scalingType": "fill"
+    }
+  ]
+}

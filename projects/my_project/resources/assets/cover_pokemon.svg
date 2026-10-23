@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="196" height="150" viewBox="0 0 196 150">
+<defs>
+ <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0E7A5F"/><stop offset="1" stop-color="#22B58A"/></linearGradient>
+ <radialGradient id="glow" cx="0.7" cy="0.3" r="0.6"><stop offset="0" stop-color="#B9FFE4" stop-opacity="0.7"/><stop offset="1" stop-color="#B9FFE4" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="196" height="150" fill="url(#pg)"/>
+<rect width="196" height="150" fill="url(#glow)"/>
+<g opacity="0.25" stroke="#D8FFF2" fill="none">
+ <circle cx="40" cy="40" r="24"/><circle cx="160" cy="90" r="34"/><circle cx="118" cy="24" r="14"/>
+</g>
+<g transform="translate(98,72)">
+ <circle r="26" fill="#F5F7F2" stroke="#173A2E" stroke-width="4"/>
+ <path d="M-26 0 A26 26 0 0 1 26 0Z" fill="#E2483D"/>
+ <circle r="8" fill="#F5F7F2" stroke="#173A2E" stroke-width="4"/>
+</g>
+<g fill="#0B2B22" opacity="0.55"><path d="M0 120 C28 108 40 126 68 118 L68 150 L0 150Z"/><path d="M128 126 C154 112 172 126 196 118 L196 150 L128 150Z"/></g>
+<text x="14" y="136" fill="#EAFFF6" font-family="Verdana,sans-serif" font-size="10" font-weight="bold" letter-spacing="1">POKÉMON</text>
+<text x="14" y="146" fill="#EAFFF6" font-family="Verdana,sans-serif" font-size="12" font-weight="bold" letter-spacing="1">EMERALD</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="196" height="150" viewBox="0 0 196 150">
+<defs>
+ <linearGradient id="marioSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#63C7F2"/><stop offset="0.62" stop-color="#9BE0F7"/><stop offset="1" stop-color="#D4F3C3"/></linearGradient>
+ <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#77C94A"/><stop offset="1" stop-color="#3E8C2A"/></linearGradient>
+</defs>
+<rect width="196" height="115" fill="url(#marioSky)"/>
+<g fill="#FFFFFF" opacity="0.9">
+ <ellipse cx="38" cy="28" rx="20" ry="10"/><ellipse cx="53" cy="24" rx="14" ry="9"/>
+ <ellipse cx="154" cy="42" rx="24" ry="11"/><ellipse cx="136" cy="38" rx="13" ry="8"/>
+</g>
+<path d="M0 106 C30 72 64 70 92 102 L92 150 L0 150Z" fill="url(#hill)"/>
+<path d="M104 110 C138 74 172 76 196 100 L196 150 L104 150Z" fill="url(#hill)"/>
+<g fill="#7A4A16"><rect x="56" y="122" width="8" height="24" rx="2"/><rect x="132" y="120" width="8" height="26" rx="2"/></g>
+<g><rect x="40" y="108" width="80" height="16" rx="3" fill="#E1A13A"/><rect x="44" y="112" width="72" height="4" rx="2" fill="#FFD27A"/></g>
+<g>
+ <rect x="92" y="60" width="26" height="22" rx="2" fill="#E33B2E"/>
+ <circle cx="105" cy="60" r="10" fill="#F7D3B3"/>
+ <path d="M95 52 A10 10 0 0 1 115 52 L113 59 L97 59Z" fill="#E33B2E"/>
+ <circle cx="101" cy="60" r="1.6" fill="#2B1A12"/><circle cx="109" cy="60" r="1.6" fill="#2B1A12"/>
+ <rect x="87" y="82" width="36" height="26" rx="8" fill="#2E63C8"/>
+ <circle cx="86" cy="90" r="7" fill="#F7D3B3"/><circle cx="124" cy="90" r="7" fill="#F7D3B3"/>
+ <rect x="95" y="108" width="10" height="14" rx="3" fill="#2B1A12"/>
+ <rect x="106" y="108" width="10" height="14" rx="3" fill="#2B1A12"/>
+</g>
+<rect y="0" width="196" height="150" fill="none"/>
+<text x="14" y="136" fill="#123B12" font-family="Verdana,sans-serif" font-size="10" font-weight="bold" letter-spacing="1">SUPER</text>
+<text x="14" y="146" fill="#123B12" font-family="Verdana,sans-serif" font-size="13" font-weight="bold" letter-spacing="1">MARIO WORLD</text>
+</svg>

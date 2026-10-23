@@ -1,0 +1,15 @@
+{
+  "name": "retro_library",
+  "version": 1,
+  "colorScheme": "dark",
+  "author": "beiklive",
+  "description": "多机种复古游戏前端示例（bklv 视图 JSON）",
+  "files": [
+    "tokens/colors.json",
+    "tokens/metrics.json",
+    "view/home.json",
+    "view/components/gameCard.json",
+    "view/components/header.json",
+    "view/components/button.json"
+  ]
+}

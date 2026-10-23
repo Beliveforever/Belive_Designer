@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="196" height="150" viewBox="0 0 196 150">
+<defs>
+ <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9D8A6"/><stop offset="0.55" stop-color="#C2A15E"/><stop offset="1" stop-color="#4E5B2F"/></linearGradient>
+ <linearGradient id="haze" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF6D8" stop-opacity="0.8"/><stop offset="1" stop-color="#6D7A3D" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="196" height="150" fill="url(#sky)"/>
+<circle cx="146" cy="34" r="26" fill="#FFF4C8" opacity="0.55"/>
+<path d="M0 112 L44 72 L70 94 L104 52 L142 92 L168 76 L196 104 L196 150 L0 150Z" fill="#3B4A29"/>
+<path d="M0 126 L58 96 L96 120 L132 88 L196 128 L196 150 L0 150Z" fill="#26331D"/>
+<path d="M88 108 L96 58 L104 108Z" fill="#8C6A2F"/>
+<path d="M88 84 L104 72 L108 84Z" fill="#D8C27A"/>
+<path d="M0 0 L196 0 L196 22 L0 36Z" fill="url(#haze)"/>
+<text x="14" y="132" fill="#F7EFD0" font-family="Georgia,serif" font-size="13" font-weight="bold" letter-spacing="1">THE LEGEND OF</text>
+<text x="14" y="146" fill="#F7EFD0" font-family="Georgia,serif" font-size="17" font-weight="bold" letter-spacing="2">ZELDA</text>
+</svg>

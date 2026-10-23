@@ -1,0 +1,25 @@
+{
+  "vars": {
+    "colors": {
+      "bg": "@theme/color.primary",
+      "fg": "@theme/color.common.white"
+    },
+    "numbers": {}
+  },
+  "type": "Box",
+  "width": 128,
+  "height": 40,
+  "cornerRadius": 10,
+  "backgroundColor": "&color.bg",
+  "axis": "row",
+  "justifyContent": "center",
+  "alignItems": "center",
+  "children": [
+    {
+      "type": "Label",
+      "text": "开始游戏",
+      "fontSize": 13,
+      "textColor": "&color.fg"
+    }
+  ]
+}

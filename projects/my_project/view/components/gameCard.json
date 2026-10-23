@@ -1,0 +1,81 @@
+{
+  "vars": {
+    "colors": {
+      "bgColor": "@theme/color.surface",
+      "titleColor": "@theme/color.common.white",
+      "metaColor": "@theme/color.textMuted"
+    },
+    "numbers": {
+      "radius": 14
+    }
+  },
+  "type": "Box",
+  "width": 196,
+  "height": 258,
+  "axis": "column",
+  "backgroundColor": "&color.bgColor",
+  "cornerRadius": "&number.radius",
+  "clipsToBounds": true,
+  "borderThickness": 0,
+  "borderColor": "@theme/color.border",
+  "children": [
+    {
+      "type": "Image",
+      "src": "@res/assets/cover_mario.svg",
+      "width": 196,
+      "height": 150,
+      "scalingType": "fill"
+    },
+    {
+      "type": "Box",
+      "left": 10,
+      "top": 10,
+      "width": 44,
+      "height": 20,
+      "cornerRadius": 6,
+      "backgroundColor": "#0F172ACC",
+      "borderThickness": 1,
+      "borderColor": "@theme/color.primary",
+      "axis": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "position": "absolute",
+      "children": [
+        {
+          "type": "Label",
+          "text": "SFC",
+          "fontSize": 9,
+          "textColor": "@theme/color.common.white"
+        }
+      ]
+    },
+    {
+      "type": "Box",
+      "grow": 1,
+      "padding": 12,
+      "gap": 6,
+      "axis": "column",
+      "children": [
+        {
+          "type": "Label",
+          "text": "动作 · 平台",
+          "fontSize": 9,
+          "textColor": "@theme/color.textMuted"
+        },
+        {
+          "type": "Label",
+          "text": "Super Mario World",
+          "fontSize": 13,
+          "textColor": "&color.titleColor",
+          "singleLine": true
+        },
+        {
+          "type": "Label",
+          "text": "游戏时长 36.5h",
+          "fontSize": 10,
+          "textColor": "&color.metaColor"
+        }
+      ]
+    }
+  ]
+}

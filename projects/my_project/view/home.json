@@ -1,0 +1,995 @@
+{
+  "vars": {
+    "colors": {
+      "bgColor": "@theme/color.surface",
+      "titleColor": "@theme/color.common.white",
+      "metaColor": "@theme/color.textMuted"
+    },
+    "numbers": {
+      "radius": 14
+    }
+  },
+  "type": "Box",
+  "width": 1280,
+  "height": 720,
+  "axis": "row",
+  "backgroundColor": "@theme/color.bg",
+  "clipsToBounds": true,
+  "children": [
+    {
+      "type": "Box",
+      "width": 228,
+      "height": 720,
+      "axis": "column",
+      "padding": 20,
+      "gap": 8,
+      "backgroundColor": "@theme/color.navy",
+      "children": [
+        {
+          "type": "Box",
+          "axis": "row",
+          "alignItems": "center",
+          "gap": 10,
+          "height": 46,
+          "children": [
+            {
+              "type": "Image",
+              "src": "@res/assets/logo.svg",
+              "width": 36,
+              "height": 36,
+              "scalingType": "fill",
+              "cornerRadius": 10
+            },
+            {
+              "type": "Box",
+              "axis": "column",
+              "gap": 2,
+              "grow": 1,
+              "children": [
+                {
+                  "type": "Label",
+                  "text": "Jiaozi",
+                  "fontSize": 20,
+                  "textColor": "@theme/color.text"
+                },
+                {
+                  "type": "Label",
+                  "text": "多机种复古游戏前端",
+                  "fontSize": 10,
+                  "textColor": "@theme/color.textMuted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Box",
+          "height": 18
+        },
+        {
+          "type": "Box",
+          "axis": "column",
+          "gap": 6,
+          "width": 188,
+          "children": [
+            {
+              "type": "Box",
+              "width": 188,
+              "height": 42,
+              "cornerRadius": 10,
+              "axis": "row",
+              "alignItems": "center",
+              "gap": 10,
+              "padding": 12,
+              "backgroundColor": "@theme/color.primary",
+              "children": [
+                {
+                  "type": "Image",
+                  "src": "@res/assets/icon_gamepad.svg",
+                  "width": 16,
+                  "height": 16,
+                  "scalingType": "fill"
+                },
+                {
+                  "type": "Label",
+                  "text": "游戏库",
+                  "fontSize": 13,
+                  "textColor": "@theme/color.common.white"
+                }
+              ]
+            },
+            {
+              "type": "Box",
+              "width": 188,
+              "height": 42,
+              "cornerRadius": 10,
+              "axis": "row",
+              "alignItems": "center",
+              "gap": 10,
+              "padding": 12,
+              "children": [
+                {
+                  "type": "Image",
+                  "src": "@res/assets/icon_clock.svg",
+                  "width": 16,
+                  "height": 16,
+                  "scalingType": "fill"
+                },
+                {
+                  "type": "Label",
+                  "text": "最近游戏",
+                  "fontSize": 13,
+                  "textColor": "@theme/color.textMuted"
+                }
+              ]
+            },
+            {
+              "type": "Box",
+              "width": 188,
+              "height": 42,
+              "cornerRadius": 10,
+              "axis": "row",
+              "alignItems": "center",
+              "gap": 10,
+              "padding": 12,
+              "children": [
+                {
+                  "type": "Image",
+                  "src": "@res/assets/icon_star.svg",
+                  "width": 16,
+                  "height": 16,
+                  "scalingType": "fill"
+                },
+                {
+                  "type": "Label",
+                  "text": "收藏夹",
+                  "fontSize": 13,
+                  "textColor": "@theme/color.textMuted"
+                }
+              ]
+            },
+            {
+              "type": "Box",
+              "width": 188,
+              "height": 42,
+              "cornerRadius": 10,
+              "axis": "row",
+              "alignItems": "center",
+              "gap": 10,
+              "padding": 12,
+              "children": [
+                {
+                  "type": "Image",
+                  "src": "@res/assets/icon_settings.svg",
+                  "width": 16,
+                  "height": 16,
+                  "scalingType": "fill"
+                },
+                {
+                  "type": "Label",
+                  "text": "设置",
+                  "fontSize": 13,
+                  "textColor": "@theme/color.textMuted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Box",
+          "grow": 1
+        },
+        {
+          "type": "Box",
+          "axis": "column",
+          "gap": 5,
+          "children": [
+            {
+              "type": "Label",
+              "text": "RETRO LAB",
+              "fontSize": 9,
+              "textColor": "@theme/color.accent"
+            },
+            {
+              "type": "Label",
+              "text": "多机种模拟前端 v2.4",
+              "fontSize": 9,
+              "textColor": "@theme/color.textMuted"
+            },
+            {
+              "type": "Box",
+              "width": 188,
+              "height": 3,
+              "cornerRadius": 2,
+              "backgroundColor": "@theme/color.surfaceHigh"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Box",
+      "width": 1052,
+      "height": 720,
+      "axis": "column",
+      "padding": 24,
+      "gap": 16,
+      "backgroundColor": "@theme/color.bg",
+      "clipsToBounds": true,
+      "children": [
+        {
+          "type": "Image",
+          "src": "@res/assets/decor.svg",
+          "width": 1052,
+          "height": 720,
+          "scalingType": "fill",
+          "left": 0,
+          "top": 0,
+          "alpha": 0.75,
+          "position": "absolute"
+        },
+        {
+          "type": "Box",
+          "width": 1000,
+          "height": 46,
+          "axis": "row",
+          "alignItems": "center",
+          "gap": 12,
+          "children": [
+            {
+              "type": "Box",
+              "axis": "column",
+              "gap": 2,
+              "grow": 1,
+              "children": [
+                {
+                  "type": "Label",
+                  "text": "游戏库",
+                  "fontSize": 24,
+                  "textColor": "@theme/color.text"
+                },
+                {
+                  "type": "Label",
+                  "text": "精选复古游戏 · 4 款",
+                  "fontSize": 11,
+                  "textColor": "@theme/color.textMuted"
+                }
+              ]
+            },
+            {
+              "type": "Box",
+              "axis": "row",
+              "alignItems": "center",
+              "gap": 14,
+              "children": [
+                {
+                  "type": "Label",
+                  "text": "10:24",
+                  "fontSize": 13,
+                  "textColor": "@theme/color.text"
+                },
+                {
+                  "type": "Image",
+                  "src": "@res/assets/icon_wifi.svg",
+                  "width": 18,
+                  "height": 18,
+                  "scalingType": "fill"
+                },
+                {
+                  "type": "Image",
+                  "src": "@res/assets/icon_battery.svg",
+                  "width": 18,
+                  "height": 18,
+                  "scalingType": "fill"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Box",
+          "grow": 1,
+          "axis": "column",
+          "justifyContent": "center",
+          "gap": 18,
+          "children": [
+            {
+              "type": "Box",
+              "axis": "row",
+              "height": 268,
+              "gap": 18,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "Box",
+                  "width": 196,
+                  "height": 258,
+                  "axis": "column",
+                  "backgroundColor": "&color.bgColor",
+                  "cornerRadius": "&number.radius",
+                  "clipsToBounds": true,
+                  "borderThickness": 0,
+                  "borderColor": "@theme/color.border",
+                  "children": [
+                    {
+                      "type": "Image",
+                      "src": "@res/assets/cover_zelda.svg",
+                      "width": 196,
+                      "height": 150,
+                      "scalingType": "fill"
+                    },
+                    {
+                      "type": "Box",
+                      "left": 10,
+                      "top": 10,
+                      "width": 44,
+                      "height": 20,
+                      "cornerRadius": 6,
+                      "backgroundColor": "#0F172ACC",
+                      "borderThickness": 1,
+                      "borderColor": "@theme/color.primary",
+                      "axis": "row",
+                      "alignItems": "center",
+                      "justifyContent": "center",
+                      "position": "absolute",
+                      "children": [
+                        {
+                          "type": "Label",
+                          "text": "SFC",
+                          "fontSize": 9,
+                          "textColor": "@theme/color.common.white"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Box",
+                      "grow": 1,
+                      "padding": 12,
+                      "gap": 6,
+                      "axis": "column",
+                      "children": [
+                        {
+                          "type": "Box",
+                          "axis": "row",
+                          "alignItems": "center",
+                          "gap": 6,
+                          "width": 172,
+                          "children": [
+                            {
+                              "type": "Label",
+                              "text": "8 次",
+                              "fontSize": 9,
+                              "textColor": "@theme/color.textMuted"
+                            },
+                            {
+                              "type": "Box",
+                              "grow": 1,
+                              "height": 1
+                            },
+                            {
+                              "type": "Label",
+                              "text": "22.3h",
+                              "fontSize": 9,
+                              "textColor": "@theme/color.textMuted"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Label",
+                          "text": "The Legend of Zelda",
+                          "fontSize": 13,
+                          "textColor": "&color.titleColor",
+                          "singleLine": true
+                        },
+                        {
+                          "type": "Label",
+                          "text": "游戏时长 22.3h",
+                          "fontSize": 10,
+                          "textColor": "&color.metaColor"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Box",
+                  "width": 196,
+                  "height": 258,
+                  "axis": "column",
+                  "backgroundColor": "&color.bgColor",
+                  "cornerRadius": "&number.radius",
+                  "clipsToBounds": true,
+                  "borderThickness": 2,
+                  "borderColor": "@theme/color.primary",
+                  "children": [
+                    {
+                      "type": "Image",
+                      "src": "@res/assets/cover_mario.svg",
+                      "width": 196,
+                      "height": 150,
+                      "scalingType": "fill"
+                    },
+                    {
+                      "type": "Box",
+                      "left": 10,
+                      "top": 10,
+                      "width": 44,
+                      "height": 20,
+                      "cornerRadius": 6,
+                      "backgroundColor": "#0F172ACC",
+                      "borderThickness": 1,
+                      "borderColor": "@theme/color.primary",
+                      "axis": "row",
+                      "alignItems": "center",
+                      "justifyContent": "center",
+                      "position": "absolute",
+                      "children": [
+                        {
+                          "type": "Label",
+                          "text": "SFC",
+                          "fontSize": 9,
+                          "textColor": "@theme/color.common.white"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Box",
+                      "grow": 1,
+                      "padding": 12,
+                      "gap": 6,
+                      "axis": "column",
+                      "children": [
+                        {
+                          "type": "Box",
+                          "axis": "row",
+                          "alignItems": "center",
+                          "gap": 6,
+                          "width": 172,
+                          "children": [
+                            {
+                              "type": "Label",
+                              "text": "12 次",
+                              "fontSize": 9,
+                              "textColor": "@theme/color.textMuted"
+                            },
+                            {
+                              "type": "Box",
+                              "grow": 1,
+                              "height": 1
+                            },
+                            {
+                              "type": "Label",
+                              "text": "36.5h",
+                              "fontSize": 9,
+                              "textColor": "@theme/color.textMuted"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Label",
+                          "text": "Super Mario World",
+                          "fontSize": 13,
+                          "textColor": "&color.titleColor",
+                          "singleLine": true
+                        },
+                        {
+                          "type": "Label",
+                          "text": "游戏时长 36.5h",
+                          "fontSize": 10,
+                          "textColor": "&color.metaColor"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Box",
+                  "width": 196,
+                  "height": 258,
+                  "axis": "column",
+                  "backgroundColor": "&color.bgColor",
+                  "cornerRadius": "&number.radius",
+                  "clipsToBounds": true,
+                  "borderThickness": 0,
+                  "borderColor": "@theme/color.border",
+                  "children": [
+                    {
+                      "type": "Image",
+                      "src": "@res/assets/cover_pokemon.svg",
+                      "width": 196,
+                      "height": 150,
+                      "scalingType": "fill"
+                    },
+                    {
+                      "type": "Box",
+                      "left": 10,
+                      "top": 10,
+                      "width": 44,
+                      "height": 20,
+                      "cornerRadius": 6,
+                      "backgroundColor": "#0F172ACC",
+                      "borderThickness": 1,
+                      "borderColor": "@theme/color.primary",
+                      "axis": "row",
+                      "alignItems": "center",
+                      "justifyContent": "center",
+                      "position": "absolute",
+                      "children": [
+                        {
+                          "type": "Label",
+                          "text": "GBA",
+                          "fontSize": 9,
+                          "textColor": "@theme/color.common.white"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Box",
+                      "grow": 1,
+                      "padding": 12,
+                      "gap": 6,
+                      "axis": "column",
+                      "children": [
+                        {
+                          "type": "Box",
+                          "axis": "row",
+                          "alignItems": "center",
+                          "gap": 6,
+                          "width": 172,
+                          "children": [
+                            {
+                              "type": "Label",
+                              "text": "15 次",
+                              "fontSize": 9,
+                              "textColor": "@theme/color.textMuted"
+                            },
+                            {
+                              "type": "Box",
+                              "grow": 1,
+                              "height": 1
+                            },
+                            {
+                              "type": "Label",
+                              "text": "48.2h",
+                              "fontSize": 9,
+                              "textColor": "@theme/color.textMuted"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Label",
+                          "text": "Pokémon Emerald",
+                          "fontSize": 13,
+                          "textColor": "&color.titleColor",
+                          "singleLine": true
+                        },
+                        {
+                          "type": "Label",
+                          "text": "游戏时长 48.2h",
+                          "fontSize": 10,
+                          "textColor": "&color.metaColor"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Box",
+                  "width": 196,
+                  "height": 258,
+                  "axis": "column",
+                  "backgroundColor": "&color.bgColor",
+                  "cornerRadius": "&number.radius",
+                  "clipsToBounds": true,
+                  "borderThickness": 0,
+                  "borderColor": "@theme/color.border",
+                  "children": [
+                    {
+                      "type": "Image",
+                      "src": "@res/assets/cover_metroid.svg",
+                      "width": 196,
+                      "height": 150,
+                      "scalingType": "fill"
+                    },
+                    {
+                      "type": "Box",
+                      "left": 10,
+                      "top": 10,
+                      "width": 44,
+                      "height": 20,
+                      "cornerRadius": 6,
+                      "backgroundColor": "#0F172ACC",
+                      "borderThickness": 1,
+                      "borderColor": "@theme/color.primary",
+                      "axis": "row",
+                      "alignItems": "center",
+                      "justifyContent": "center",
+                      "position": "absolute",
+                      "children": [
+                        {
+                          "type": "Label",
+                          "text": "GBA",
+                          "fontSize": 9,
+                          "textColor": "@theme/color.common.white"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Box",
+                      "grow": 1,
+                      "padding": 12,
+                      "gap": 6,
+                      "axis": "column",
+                      "children": [
+                        {
+                          "type": "Box",
+                          "axis": "row",
+                          "alignItems": "center",
+                          "gap": 6,
+                          "width": 172,
+                          "children": [
+                            {
+                              "type": "Label",
+                              "text": "6 次",
+                              "fontSize": 9,
+                              "textColor": "@theme/color.textMuted"
+                            },
+                            {
+                              "type": "Box",
+                              "grow": 1,
+                              "height": 1
+                            },
+                            {
+                              "type": "Label",
+                              "text": "18.7h",
+                              "fontSize": 9,
+                              "textColor": "@theme/color.textMuted"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Label",
+                          "text": "Metroid Fusion",
+                          "fontSize": 13,
+                          "textColor": "&color.titleColor",
+                          "singleLine": true
+                        },
+                        {
+                          "type": "Label",
+                          "text": "游戏时长 18.7h",
+                          "fontSize": 10,
+                          "textColor": "&color.metaColor"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Box",
+              "axis": "row",
+              "height": 8,
+              "gap": 6,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "Box",
+                  "width": 6,
+                  "height": 6,
+                  "cornerRadius": 3,
+                  "backgroundColor": "@theme/color.surfaceHigh"
+                },
+                {
+                  "type": "Box",
+                  "width": 18,
+                  "height": 6,
+                  "cornerRadius": 3,
+                  "backgroundColor": "@theme/color.primary"
+                },
+                {
+                  "type": "Box",
+                  "width": 6,
+                  "height": 6,
+                  "cornerRadius": 3,
+                  "backgroundColor": "@theme/color.surfaceHigh"
+                },
+                {
+                  "type": "Box",
+                  "width": 6,
+                  "height": 6,
+                  "cornerRadius": 3,
+                  "backgroundColor": "@theme/color.surfaceHigh"
+                },
+                {
+                  "type": "Box",
+                  "width": 6,
+                  "height": 6,
+                  "cornerRadius": 3,
+                  "backgroundColor": "@theme/color.surfaceHigh"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Box",
+          "width": 1000,
+          "height": 104,
+          "cornerRadius": 14,
+          "backgroundColor": "@theme/color.surface",
+          "borderThickness": 1,
+          "borderColor": "@theme/color.border",
+          "padding": 10,
+          "gap": 6,
+          "axis": "row",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "Box",
+              "grow": 1,
+              "height": 78,
+              "cornerRadius": 10,
+              "axis": "column",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "gap": 7,
+              "backgroundColor": "@theme/color.surfaceHigh",
+              "children": [
+                {
+                  "type": "Box",
+                  "width": 34,
+                  "height": 26,
+                  "cornerRadius": 5,
+                  "backgroundColor": "#B91C1C"
+                },
+                {
+                  "type": "Label",
+                  "text": "FC",
+                  "fontSize": 10,
+                  "textColor": "@theme/color.text"
+                }
+              ]
+            },
+            {
+              "type": "Box",
+              "grow": 1,
+              "height": 78,
+              "cornerRadius": 10,
+              "axis": "column",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "gap": 7,
+              "backgroundColor": "@theme/color.surfaceHigh",
+              "children": [
+                {
+                  "type": "Box",
+                  "width": 34,
+                  "height": 26,
+                  "cornerRadius": 5,
+                  "backgroundColor": "#7C3AED"
+                },
+                {
+                  "type": "Label",
+                  "text": "SFC",
+                  "fontSize": 10,
+                  "textColor": "@theme/color.text"
+                }
+              ]
+            },
+            {
+              "type": "Box",
+              "grow": 1,
+              "height": 78,
+              "cornerRadius": 10,
+              "axis": "column",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "gap": 7,
+              "backgroundColor": "@theme/color.surfaceHigh",
+              "children": [
+                {
+                  "type": "Box",
+                  "width": 34,
+                  "height": 26,
+                  "cornerRadius": 5,
+                  "backgroundColor": "#2563EB"
+                },
+                {
+                  "type": "Label",
+                  "text": "MD",
+                  "fontSize": 10,
+                  "textColor": "@theme/color.text"
+                }
+              ]
+            },
+            {
+              "type": "Box",
+              "grow": 1,
+              "height": 78,
+              "cornerRadius": 10,
+              "axis": "column",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "gap": 7,
+              "backgroundColor": "@theme/color.surfaceHigh",
+              "children": [
+                {
+                  "type": "Box",
+                  "width": 34,
+                  "height": 26,
+                  "cornerRadius": 5,
+                  "backgroundColor": "#4338CA"
+                },
+                {
+                  "type": "Label",
+                  "text": "GBA",
+                  "fontSize": 10,
+                  "textColor": "@theme/color.text"
+                }
+              ]
+            },
+            {
+              "type": "Box",
+              "grow": 1,
+              "height": 78,
+              "cornerRadius": 10,
+              "axis": "column",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "gap": 7,
+              "backgroundColor": "@theme/color.surfaceHigh",
+              "children": [
+                {
+                  "type": "Box",
+                  "width": 34,
+                  "height": 26,
+                  "cornerRadius": 5,
+                  "backgroundColor": "#059669"
+                },
+                {
+                  "type": "Label",
+                  "text": "GB",
+                  "fontSize": 10,
+                  "textColor": "@theme/color.text"
+                }
+              ]
+            },
+            {
+              "type": "Box",
+              "grow": 1,
+              "height": 78,
+              "cornerRadius": 10,
+              "axis": "column",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "gap": 7,
+              "backgroundColor": "@theme/color.surfaceHigh",
+              "children": [
+                {
+                  "type": "Box",
+                  "width": 34,
+                  "height": 26,
+                  "cornerRadius": 5,
+                  "backgroundColor": "#EA580C"
+                },
+                {
+                  "type": "Label",
+                  "text": "NDS",
+                  "fontSize": 10,
+                  "textColor": "@theme/color.text"
+                }
+              ]
+            },
+            {
+              "type": "Box",
+              "grow": 1,
+              "height": 78,
+              "cornerRadius": 10,
+              "axis": "column",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "gap": 7,
+              "backgroundColor": "@theme/color.surfaceHigh",
+              "children": [
+                {
+                  "type": "Box",
+                  "width": 34,
+                  "height": 26,
+                  "cornerRadius": 5,
+                  "backgroundColor": "#DB2777"
+                },
+                {
+                  "type": "Label",
+                  "text": "3DS",
+                  "fontSize": 10,
+                  "textColor": "@theme/color.text"
+                }
+              ]
+            },
+            {
+              "type": "Box",
+              "grow": 1,
+              "height": 78,
+              "cornerRadius": 10,
+              "axis": "column",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "gap": 7,
+              "backgroundColor": "@theme/color.surfaceHigh",
+              "children": [
+                {
+                  "type": "Box",
+                  "width": 34,
+                  "height": 26,
+                  "cornerRadius": 5,
+                  "backgroundColor": "#0EA5E9"
+                },
+                {
+                  "type": "Label",
+                  "text": "PSP",
+                  "fontSize": 10,
+                  "textColor": "@theme/color.text"
+                }
+              ]
+            },
+            {
+              "type": "Box",
+              "grow": 1,
+              "height": 78,
+              "cornerRadius": 10,
+              "axis": "column",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "gap": 7,
+              "backgroundColor": "@theme/color.surfaceHigh",
+              "children": [
+                {
+                  "type": "Box",
+                  "width": 34,
+                  "height": 26,
+                  "cornerRadius": 5,
+                  "backgroundColor": "#64748B"
+                },
+                {
+                  "type": "Label",
+                  "text": "PS1",
+                  "fontSize": 10,
+                  "textColor": "@theme/color.text"
+                }
+              ]
+            },
+            {
+              "type": "Box",
+              "grow": 1,
+              "height": 78,
+              "cornerRadius": 10,
+              "axis": "column",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "gap": 7,
+              "backgroundColor": "@theme/color.surfaceHigh",
+              "children": [
+                {
+                  "type": "Box",
+                  "width": 34,
+                  "height": 26,
+                  "cornerRadius": 5,
+                  "backgroundColor": "#F59E0B"
+                },
+                {
+                  "type": "Label",
+                  "text": "ARCADE",
+                  "fontSize": 10,
+                  "textColor": "@theme/color.text"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

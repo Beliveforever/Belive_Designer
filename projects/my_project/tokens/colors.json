@@ -1,0 +1,22 @@
+{
+  "common": {
+    "white": "#FFFFFF",
+    "black": "#000000",
+    "transparent": "#00000000"
+  },
+  "primary": "#3B82F6",
+  "primaryDeep": "#1D4ED8",
+  "secondary": "#6B7280",
+  "success": "#10B981",
+  "warning": "#F59E0B",
+  "danger": "#EF4444",
+  "bg": "#0F172A",
+  "navy": "#0A1122",
+  "surface": "#141F35",
+  "surfaceHigh": "#1B2942",
+  "border": "#273854",
+  "text": "#E8EEF9",
+  "textMuted": "#8B9BB7",
+  "accent": "#2DD4BF",
+  "shadow": "#02060F"
+}
