@@ -108,4 +108,5 @@ my_project/
 
 验收记录：[docs/verification.md](docs/verification.md)  
 字段审查与工作报告：[docs/work-report.md](docs/work-report.md)  
-bklv 语法支持审计：[docs/json-syntax-audit.md](docs/json-syntax-audit.md)
+bklv 语法支持审计：[docs/json-syntax-audit.md](docs/json-syntax-audit.md)  
+BekUI f56a3d4 升级检查：[docs/compatibility-f56a3d4.md](docs/compatibility-f56a3d4.md)

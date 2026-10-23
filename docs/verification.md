@@ -1,7 +1,7 @@
 # 实施验证
 
 运行环境：macOS 26.6.2 (arm64)，CMake 4.4.3，Ninja，GL 后端，Release 构建。  
-BekUI 子模块：`cd25cea`。
+BekUI 子模块：`f56a3d4`。
 
 ## 构建
 

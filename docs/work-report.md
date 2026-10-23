@@ -1,7 +1,7 @@
 # Belive Designer 工作报告（第二轮）
 
 日期：2026-10-23  
-BekUI 子模块：`cd25cea`  
+BekUI 子模块：`f56a3d4`  
 构建：Release / Ninja / GL，`dist/designer`
 
 ## 1. 结论

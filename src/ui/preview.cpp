@@ -25,8 +25,8 @@ void stripDesignerFields(Json& value)
 {
     if (value.is_object())
     {
-        // bklv view JSON has no id/name; older files may still carry them.
-        value.erase("id");
+        // `id` is a real bklv view property (findView / editor locating).
+        // `name` is still a designer-era field and is not part of bklv JSON.
         value.erase("name");
         // The designer's old shadow extension is not part of bklv view JSON.
         value.erase("shadow");

@@ -575,6 +575,8 @@ int renameRefsInJson(Json& value, const std::string& oldRef, const std::string& 
 std::string nodeDisplayName(const Json& node, const std::string& type)
 {
     if (!node.is_object()) return "Box";
+    if (node.contains("id") && node["id"].is_string() && !node["id"].get<std::string>().empty())
+        return node["id"].get<std::string>();
     if (type == "Label" && node.contains("text") && node["text"].is_string())
         return node["text"].get<std::string>();
     if (type == "Image" && node.contains("src") && node["src"].is_string())
@@ -594,7 +596,7 @@ void buildNodeTree(const Json& root, Node& out)
     out = Node();
     out.pointer = std::string();
     out.type = root.is_object() ? root.value("type", std::string("Box")) : "Box";
-    out.id = std::string();
+    out.id = root.is_object() ? root.value("id", std::string()) : std::string();
     out.name = root.is_object() ? nodeDisplayName(root, out.type) : "Box";
 
     std::function<void(Node&, const Json&, const std::string&, int)> build =
@@ -602,7 +604,7 @@ void buildNodeTree(const Json& root, Node& out)
             node.pointer = pointer;
             node.depth = depth;
             node.type = json.is_object() ? json.value("type", std::string("Box")) : "Box";
-            node.id = pointer;
+            node.id = json.is_object() ? json.value("id", pointer) : pointer;
             node.name = nodeDisplayName(json, node.type);
             if (!json.is_object() || !json.contains("children") || !json["children"].is_array())
                 return;

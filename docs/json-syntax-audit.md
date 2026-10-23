@@ -26,6 +26,9 @@
 | `type` / `children` | ✅ | 画布、节点树、代码页 |
 | `include` | ◐ | 预览会展开（含循环检测）；节点树不展开，检查器只显示说明 |
 | `bind` / `bindTo` | ✗ | 需要运行期数据源；设计器不绑定/预览数据 |
+| `id` | ✅ | 预览保留；节点树标签/检查器可编辑 |
+| `visibleIf` / `foreach` / `onClick` | ◐ | 预览交给 bklv；检查器只有字符串行，无数据源/行为注册 UI |
+| vars 数值表达式 | ◐ | 预览 bklv 求值；检查器显示原始值 |
 | Box/Row 容器字段 | ✅ | axis/direction/align*/justify/gap*/padding*/flex*/margin 等 |
 | 公共字段 | ✅ | 尺寸/定位/可见性/背景/边框/圆角/alpha/裁剪 |
 | Label / Image / Button 字段 | ✅ | 检查器覆盖手册字段 |
@@ -41,11 +44,13 @@
 | `import` 字符串/数组、递归、循环保护 | ✅ | 节点树递归展开；点击导入节点打开源文件并定位图层 |
 | 层 import 字符串/数组 | ✅ | 展开；点击可打开源文件 |
 | `box` | ◐ | 尺寸/布局/背景/边框/圆角/grow/shrink/measureContent/padding/margin；`padding`/`margin` 单值/数组可编辑 |
-| `layers` 通用字段 | ◐ | op/id/fill/stroke/radius/strokeWidth/color/fontSize/inset/offset/align/valign/opacity/width/height 等；**gradient 仅预览，无编辑 UI** |
+| `layers` 通用字段 | ◐ | op/id/fill/stroke/radius/strokeWidth/color/fontSize/inset/offset/align/valign/opacity/clip/width/height 等；**gradient 仅预览，无编辑 UI** |
 | `states` | ◐ | 预览初值；没有状态切换/关键帧编辑器 |
 | `transitions` | ◐ | 预览初值；没有事件/通道编辑与播放控制 |
 | `children` | ◐ | 预览建子视图；节点树递归；检查器没有子节点属性编辑 |
 | `glass` | ✅ | 预览；fill/opacity/radius/inset 可编辑 |
+| image `slice` 九宫格 | ✅ | 预览；检查器可编辑 slice 四项 |
+| 外观 `requires` / sound override | ✗ | 无 UI |
 | 扩展层 | ◐ | bklv 注册后可预览；检查器没有扩展参数模式 UI |
 | 新增/删除/复制图层 | ✅ | 节点树 + 菜单；导入前编译校验 |
 | 排序图层 | ✗ | 新 rect/glass 插在内容层前，其余追加；无拖拽排序 |
@@ -56,7 +61,7 @@
 |---|---|---|
 | `theme.json` / `files[]` | ✅ | 打开工程、显示清单、复制工程更新 name/description |
 | `tokens/colors.json` / `metrics.json` | ✅ | 全局变量表、编辑、重载主题 |
-| `theme.json behavior` | ✗ | 没有行为默认值编辑 |
+| `theme.json behavior` / `schemaVersion` / `sound` | ✗ | 无 UI；sound 资源不参与编辑 |
 | `themes.json` 多主题清单 | ✗ | 设计器以单个 `theme.json` 为工程 |
 | `colorScheme` | ◐ | 读取/显示；不驱动设计器主题 |
 
@@ -87,6 +92,7 @@
 - 修复 view 根节点不能编辑（空 pointer 是合法根节点）：数字/枚举/颜色/引用均可改。
 - 引用属性增加 × 取消引用；view 与外观都支持。
 - 点击导入节点打开源文件并定位到对应图层。
+- 适配 BekUI f56a3d4：保留 view `id`、检查器 ID 行、layer `clip`/`slice`、`onClick`/`visibleIf`/`foreach` 行。
 
 ## 结论
 

@@ -2916,6 +2916,7 @@ void InspectorPanel::drawAppearanceEditor(ImDrawList* drawList, float x, float y
             row(base + "/align", "水平对齐", TokenType::STRING, "left|center|right");
             row(base + "/valign", "垂直对齐", TokenType::STRING, "top|center|bottom");
             row(base + "/opacity", "不透明度", TokenType::NUMBER);
+            row(base + "/clip", "裁剪到本层", TokenType::BOOLEAN);
             arrayRows(base + "/inset", edges);
             const Json* offset = document->valueAt(base + "/offset");
             if (offset != nullptr && offset->is_array())
@@ -2945,6 +2946,14 @@ void InspectorPanel::drawAppearanceEditor(ImDrawList* drawList, float x, float y
                 row(base + "/data_id", "数据槽", TokenType::STRING);
                 row(base + "/scaling", "缩放", TokenType::STRING, "fit|fill|stretch|center");
                 row(base + "/radius", "圆角", TokenType::NUMBER);
+                const Json* slice = document->valueAt(base + "/slice");
+                if (slice != nullptr && slice->is_array())
+                {
+                    row(base + "/slice/0", "九宫格左", TokenType::NUMBER);
+                    row(base + "/slice/1", "九宫格上", TokenType::NUMBER);
+                    row(base + "/slice/2", "九宫格右", TokenType::NUMBER);
+                    row(base + "/slice/3", "九宫格下", TokenType::NUMBER);
+                }
             }
             else if (op == "shadow")
             {
@@ -3304,6 +3313,7 @@ void InspectorPanel::draw(ImDrawList* drawList, float x, float y, float width, f
     if (this->app.inspectorTab == InspectorTab::PROPERTIES)
     {
         section("基础属性");
+        propRow("id", "ID", false, TokenType::STRING);
         propRow("width", "宽度", true, TokenType::NUMBER);
         propRow("height", "高度", true, TokenType::NUMBER);
         propRow("minWidth", "最小宽度", true, TokenType::NUMBER);
@@ -3377,6 +3387,11 @@ void InspectorPanel::draw(ImDrawList* drawList, float x, float y, float width, f
         propRow("marginLeft", "左外边距", true, TokenType::NUMBER);
         propRow("grow", "伸展", true, TokenType::NUMBER);
         propRow("shrink", "收缩", true, TokenType::NUMBER);
+
+        section("交互 / 数据");
+        propRow("onClick", "点击行为", false, TokenType::STRING);
+        propRow("visibleIf", "可见条件", false, TokenType::STRING);
+        propRow("foreach", "循环字段", false, TokenType::STRING);
     }
     else
     {
