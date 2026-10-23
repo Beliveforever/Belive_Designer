@@ -31,6 +31,10 @@ cmake --build build/gl
 | import 递归 | 打开 `base/box.component.json` | `import` 数组两项都展开，嵌套 glass 层继续展开 |
 | 外观 children | 打开 `base/children_demo.json` | 子视图实际创建；节点树递归显示 children |
 | 视图 include | 打开 `view/json_include_main.json` | 相对 resources 解析并展开预览 |
+| foreach 预览 | 打开 `view/json_foreach.json` | 注入 3 个示例项并渲染；画布提示示例数据 |
+| onClick 预览 | 打开 `view/json_action.json` | 空行为注册，预览不报未注册 |
+| bind/visibleIf 预览 | 打开 `view/json_binding.json` | 注入示例字段/可见条件 |
+| 主题 schema/sound | 打开 `theme.json` | 清单显示 schemaVersion/sound/behavior |
 | 主题/变量 JSON | 打开 `tokens/colors.json` / `theme.json` | 中央显示变量表/主题清单，代码页可编辑 |
 | bklv 原生视图 | 画布渲染 | 页面由 `type` + 平铺属性 + children 实例化；无自定义 style 包装 |
 | 全局变量 | 「全局变量」页签 | 显示 color.* / metric.* 的键、值、来源文件、引用数 |

@@ -2320,10 +2320,15 @@ void CanvasPanel::draw(ImDrawList* drawList, float x, float y, float width, floa
             const int fileCount = root.contains("files") && root["files"].is_array()
                 ? (int)root["files"].size() : 0;
             const int tokenCount = (int)this->app.project.tokens.size();
-            const char* labels[] = { "名称", "配色", "作者", "文件", "全局变量", "描述" };
-            const std::string values[] = { name, scheme, author, std::to_string(fileCount) + " 个",
-                std::to_string(tokenCount) + " 个", description };
-            for (int i = 0; i < 6; ++i)
+            const int schemaVersion = root.value("schemaVersion", 1);
+            const std::string sound = root.value("sound", std::string("sound.json"));
+            const std::string behavior = root.contains("behavior") && root["behavior"].is_object()
+                ? root["behavior"].dump() : std::string("—");
+            const char* labels[] = { "名称", "Schema", "配色", "音效", "作者", "文件", "全局变量", "行为", "描述" };
+            const std::string values[] = { name, std::to_string(schemaVersion), scheme, sound, author,
+                std::to_string(fileCount) + " 个", std::to_string(tokenCount) + " 个", behavior,
+                description };
+            for (int i = 0; i < 9; ++i)
             {
                 ui::textClipped(drawList, card.x + 22, rowY, 62, labels[i], palette.textMuted, 10.5f);
                 ui::textClipped(drawList, card.x + 92, rowY, card.w - 118, values[i], palette.text, 11.0f);
@@ -3390,7 +3395,8 @@ void InspectorPanel::draw(ImDrawList* drawList, float x, float y, float width, f
 
         section("交互 / 数据");
         propRow("onClick", "点击行为", false, TokenType::STRING);
-        propRow("visibleIf", "可见条件", false, TokenType::STRING);
+        if (node == nullptr || !node->contains("visibleIf") || (*node)["visibleIf"].is_string())
+            propRow("visibleIf", "可见条件", false, TokenType::STRING);
         propRow("foreach", "循环字段", false, TokenType::STRING);
     }
     else

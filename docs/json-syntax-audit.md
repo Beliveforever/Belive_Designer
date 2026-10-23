@@ -27,7 +27,7 @@
 | `include` | ◐ | 预览会展开（含循环检测）；节点树不展开，检查器只显示说明 |
 | `bind` / `bindTo` | ✗ | 需要运行期数据源；设计器不绑定/预览数据 |
 | `id` | ✅ | 预览保留；节点树标签/检查器可编辑 |
-| `visibleIf` / `foreach` / `onClick` | ◐ | 预览交给 bklv；检查器只有字符串行，无数据源/行为注册 UI |
+| `visibleIf` / `foreach` / `onClick` | ◐ | 预览注入示例数据、onClick 空行为；检查器只有字符串行，无数据源/行为注册 UI |
 | vars 数值表达式 | ◐ | 预览 bklv 求值；检查器显示原始值 |
 | Box/Row 容器字段 | ✅ | axis/direction/align*/justify/gap*/padding*/flex*/margin 等 |
 | 公共字段 | ✅ | 尺寸/定位/可见性/背景/边框/圆角/alpha/裁剪 |
@@ -61,7 +61,7 @@
 |---|---|---|
 | `theme.json` / `files[]` | ✅ | 打开工程、显示清单、复制工程更新 name/description |
 | `tokens/colors.json` / `metrics.json` | ✅ | 全局变量表、编辑、重载主题 |
-| `theme.json behavior` / `schemaVersion` / `sound` | ✗ | 无 UI；sound 资源不参与编辑 |
+| `theme.json behavior` / `schemaVersion` / `sound` | ◐ | 主题清单显示；不可编辑 |
 | `themes.json` 多主题清单 | ✗ | 设计器以单个 `theme.json` 为工程 |
 | `colorScheme` | ◐ | 读取/显示；不驱动设计器主题 |
 

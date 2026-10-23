@@ -9,6 +9,8 @@
 #include <vector>
 
 #include "bklv/core/json_view.hpp"
+#include "bklv/core/json_data.hpp"
+#include "bklv/core/json_actions.hpp"
 #include "bklv/core/resource.hpp"
 #include "bklv/core/logger.hpp"
 #include "bklv/core/ui_scale.hpp"
@@ -128,6 +130,95 @@ bool expandViewIncludes(Json& value, const fs::path& projectRoot, std::set<std::
     return true;
 }
 
+void registerPreviewActions(const Json& value, std::set<std::string>& registered)
+{
+    if (value.is_object())
+    {
+        if (value.contains("onClick") && value["onClick"].is_string())
+        {
+            const std::string name = value["onClick"].get<std::string>();
+            if (!name.empty() && !bklv::hasJsonAction(name))
+            {
+                bklv::registerJsonAction(name, [](bklv::View&) {});
+                registered.insert(name);
+            }
+        }
+        for (auto it = value.begin(); it != value.end(); ++it)
+            registerPreviewActions(it.value(), registered);
+    }
+    else if (value.is_array())
+    {
+        for (const Json& item : value) registerPreviewActions(item, registered);
+    }
+}
+
+bool hasDataFeatures(const Json& value)
+{
+    if (value.is_object())
+    {
+        for (const char* key : { "bind", "bindTo", "visibleIf", "foreach" })
+            if (value.contains(key)) return true;
+        for (auto it = value.begin(); it != value.end(); ++it)
+            if (hasDataFeatures(it.value())) return true;
+    }
+    else if (value.is_array())
+    {
+        for (const Json& item : value)
+            if (hasDataFeatures(item)) return true;
+    }
+    return false;
+}
+
+void fillSampleData(const Json& value, bklv::JsonData& data)
+{
+    if (value.is_object())
+    {
+        if (value.contains("foreach") && value["foreach"].is_string())
+        {
+            const std::string field = value["foreach"].get<std::string>();
+            if (!field.empty() && !data.hasList(field))
+                data.setList(field, { "示例 1", "示例 2", "示例 3" });
+        }
+        if (value.contains("bind") && value["bind"].is_string())
+        {
+            const std::string field = value["bind"].get<std::string>();
+            if (!field.empty() && !data.hasList(field) && !data.has(field))
+                data.set(field, "示例");
+        }
+        if (value.contains("visibleIf"))
+        {
+            const Json& condition = value["visibleIf"];
+            if (condition.is_string())
+            {
+                const std::string field = condition.get<std::string>();
+                if (!field.empty() && !data.has(field)) data.set(field, "1");
+            }
+            else if (condition.is_object() && condition.contains("field") &&
+                condition["field"].is_string())
+            {
+                const std::string field = condition["field"].get<std::string>();
+                if (!field.empty() && !data.has(field))
+                    data.set(field, condition.value("equals", std::string("1")));
+            }
+        }
+        for (auto it = value.begin(); it != value.end(); ++it)
+            fillSampleData(it.value(), data);
+    }
+    else if (value.is_array())
+    {
+        for (const Json& item : value) fillSampleData(item, data);
+    }
+}
+
+int countViews(bklv::View* view)
+{
+    if (view == nullptr) return 0;
+    int count = 1;
+    if (bklv::Box* box = view->asBox())
+        for (bklv::View* child : box->getChildren()) count += countViews(child);
+    return count;
+}
+
 void rewriteResourcePaths(Json& value, const fs::path& resourcesRoot)
 {
     if (value.is_string())
@@ -245,10 +336,37 @@ PreviewResult PreviewBuilder::build(const Project& project, const Json& document
         source["height"] = project.canvasHeight;
     }
 
+    const bool dataView = hasDataFeatures(source);
+    std::set<std::string> previewActions;
+    registerPreviewActions(source, previewActions);
+    if (!previewActions.empty())
+        result.warnings.push_back("onClick 使用空行为预览：" + std::to_string(previewActions.size()) + " 个");
     const float previousScale = bklv::getUiScale();
     bklv::setUiScale(std::max(0.05f, zoom));
     std::vector<bklv::InstantiatedView> map;
-    bklv::View* root = bklv::createFromJSONString(source.dump(), &map, nullptr);
+    bklv::View* root = nullptr;
+    if (dataView)
+    {
+        auto data = std::make_shared<bklv::JsonData>();
+        fillSampleData(source, *data);
+        auto tmpl = bklv::ViewTemplate::fromString(source.dump(), "designer-preview");
+        if (tmpl != nullptr)
+        {
+            std::vector<bklv::Binding> bindings;
+            std::vector<bklv::JsonCondition> conditions;
+            root = tmpl->instantiate(&bindings, &conditions, data.get());
+            if (root != nullptr)
+            {
+                bklv::JsonBindingRuntime runtime;
+                runtime.bind(std::move(bindings), std::move(conditions));
+                runtime.setData(data);
+                runtime.refresh();
+            }
+        }
+        result.warnings.push_back("数据视图：使用示例数据预览（foreach/bind/visibleIf）");
+    }
+    else
+        root = bklv::createFromJSONString(source.dump(), &map, nullptr);
     bklv::setUiScale(previousScale);
 
     if (root == nullptr)
@@ -259,11 +377,14 @@ PreviewResult PreviewBuilder::build(const Project& project, const Json& document
     }
 
     result.root = root;
-    result.nodeCount = (int)map.size();
-    for (const bklv::InstantiatedView& entry : map)
+    result.nodeCount = dataView ? countViews(root) : (int)map.size();
+    if (!dataView)
     {
-        result.pointerToView[entry.pointer] = entry.view;
-        result.viewToPointer[entry.view] = entry.pointer;
+        for (const bklv::InstantiatedView& entry : map)
+        {
+            result.pointerToView[entry.pointer] = entry.view;
+            result.viewToPointer[entry.view] = entry.pointer;
+        }
     }
 
     const std::string errors = bklv::getLastLoadErrors();

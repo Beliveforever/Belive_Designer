@@ -26,20 +26,23 @@
   设计器打开主题、预览页面仍正常。
 - 新增 JSON 能力：`foreach`、`visibleIf`、`onClick`、vars 数值表达式、
   view `id`、layer `clip` / image `slice`、外观 `requires`。
-- `foreach` 依赖 `JsonData` 数据源；设计器用 `createFromJSONString` 预览会报
-  “foreach 需要数据源”，这是**运行期数据依赖**，不是崩溃。
+- `foreach` / `bind` / `visibleIf` 在预览时会注入示例数据（3 个列表项、示例文本、
+  可见条件置真），不再报“需要数据源”；仍没有数据源编辑器，节点树不展开循环项。
+- `onClick` 预览会注册空行为，点击不再报“未注册”；行为本身仍由宿主 C++ 决定。
 
 ## 3. 本轮适配
 
 - 视图预览不再删除合法的 `id` 字段；节点树使用 `id` 显示标签，检查器增加 `ID` 行。
 - 外观检查器增加 `clip` 和 image `slice` 字段。
-- 视图检查器增加 `onClick` / `visibleIf` / `foreach` 行。
+- 视图检查器增加 `onClick` / `visibleIf` / `foreach` 行；`visibleIf` 对象形式仍走代码页。
+- 主题清单显示 `schemaVersion`、`sound`、`behavior`。
+- 数据视图在画布右下角显示“使用示例数据预览”提示。
 - 其余新能力仍属于部分支持（见 `docs/json-syntax-audit.md`）：
-  - `foreach` 没有数据源注入/预览。
-  - `visibleIf` 对象形式没有专用编辑器。
-  - `onClick` 没有行为注册 UI。
+  - `foreach` 使用示例数据预览，没有数据源编辑器，节点树不展开循环。
+  - `visibleIf` 使用示例数据预览；对象形式没有专用编辑器。
+  - `onClick` 没有行为注册 UI，预览点击是空操作。
   - vars 表达式没有编辑器求值显示。
-  - `requires`、`sound`、`schemaVersion` 没有 UI。
+  - `requires` 没有 UI；`sound` / `schemaVersion` 只在主题清单显示，不可编辑。
 
 ## 4. 回归验证
 
@@ -51,6 +54,8 @@
 | 外观 base/button/button.bordered | 正常渲染、节点树/检查器 |
 | include 视图 | 正常展开 |
 | 外观 import 递归/点击源文件 | 正常 |
+| foreach / binding 示例 | 示例数据渲染正常 |
+| 主题 schema/sound 显示 | 正常 |
 | 节点树创建/导入外观 | 正常，导入前编译校验 |
 | 深色主题切换 | 正常 |
 | 截图 | 正常，Retina 2x 像素 |
